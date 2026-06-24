@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign in | PHP Auth Kit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page">
+        <section class="shell" aria-label="Sign in">
+            <div class="brand">
+                <p class="eyebrow">PHP Auth Kit</p>
+                <h1>Auth that proves itself.</h1>
+                <p class="lead">A small browser client for testing the Laravel Sanctum API: sign in, store the bearer token, load the current user, and end the session cleanly.</p>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2 class="panel-title">Sign in</h2>
+                        <p class="panel-subtitle">Use an existing account to get an API token.</p>
+                    </div>
+                </div>
+
+                <form class="form" id="loginForm">
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required>
+                    </div>
+
+                    <button class="button button-primary" type="submit">Sign in</button>
+                </form>
+
+                <div id="status" class="status" role="status" aria-live="polite"></div>
+
+                <div class="divider"></div>
+
+                <p class="helper">No account yet? <a href="register.html">Create one</a>.</p>
+
+                <details class="api-settings">
+                    <summary>API settings</summary>
+                    <div class="field">
+                        <label for="apiBase">API base URL</label>
+                        <input id="apiBase" type="url" inputmode="url">
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script>initLogin();</script>
+</body>
+</html>

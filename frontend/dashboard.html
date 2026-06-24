@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | PHP Auth Kit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="dashboard-page">
+        <header class="topbar">
+            <div class="mark">PHP Auth Kit</div>
+            <button class="button button-secondary" id="logoutButton" type="button">Log out</button>
+        </header>
+
+        <section class="dashboard" aria-label="Authenticated dashboard">
+            <div class="summary">
+                <p class="eyebrow">Authenticated</p>
+                <h1 id="userName">Loading session</h1>
+                <p class="lead">This view calls `/api/me` with the stored bearer token. If the token is missing or invalid, the frontend sends you back to sign in.</p>
+                <div id="status" class="status" role="status" aria-live="polite"></div>
+            </div>
+
+            <div class="panel stack">
+                <div>
+                    <h2 class="panel-title">Profile</h2>
+                    <p class="panel-subtitle">Current user returned by the API.</p>
+                </div>
+
+                <dl class="profile-list">
+                    <div class="profile-row">
+                        <dt>Name</dt>
+                        <dd id="profileName">-</dd>
+                    </div>
+                    <div class="profile-row">
+                        <dt>Email</dt>
+                        <dd id="profileEmail">-</dd>
+                    </div>
+                    <div class="profile-row">
+                        <dt>User ID</dt>
+                        <dd id="profileId">-</dd>
+                    </div>
+                </dl>
+
+                <div class="divider"></div>
+
+                <div>
+                    <h2 class="panel-title">Token</h2>
+                    <p class="panel-subtitle">Stored locally for this browser session.</p>
+                </div>
+                <div class="token-box" id="tokenValue"></div>
+                <button class="button button-secondary" id="copyTokenButton" type="button">Copy token</button>
+
+                <details class="api-settings">
+                    <summary>API settings</summary>
+                    <div class="field">
+                        <label for="apiBase">API base URL</label>
+                        <input id="apiBase" type="url" inputmode="url">
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script>initDashboard();</script>
+</body>
+</html>
